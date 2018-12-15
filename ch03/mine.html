@@ -22,20 +22,28 @@
       border-radius: 0.5em;
     }
 
-    .container {
-      display: flex;
+    main {
+      /* IE bug */
+      display: block;
     }
 
     .main {
+      box-sizing: border-box;
+
+      float: left;
       width: 70%;
+
       background-color: #fff;
       border-radius: 0.5em;
     }
 
     .sidebar {
+      box-sizing: border-box;
+
+      float: left;
       width: 30%;
+
       padding: 1.5em;
-      margin-left: 1.5em;
       background-color: #fff;
       border-radius: 0.5em;
     }
