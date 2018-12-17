@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
     :root {
@@ -24,14 +24,24 @@
       padding: 1em 1.5em;
       color: #fff;
       background-color: #0072b0;
-      border-radius: .5em;
+      border-radius: 0.5em;
       margin-bottom: 1.5em;
     }
 
     .main {
       padding: 0 1.5em;
       background-color: #fff;
-      border-radius: .5em;
+      border-radius: 0.5em;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+      display: table;
+      content: " ";
+    }
+
+    .clearfix::after {
+      clear: both;
     }
 
     .container {
@@ -41,71 +51,88 @@
 
     .media {
       float: left;
-      width: 50%;
-      padding: 1.5em;
+
+      --media-margin: 1.5em;
+
+      margin: 0 var(--media-margin) var(--media-margin) 0;
+      width: calc(50% - var(--media-margin));
+      padding: var(--media-margin);
+
       background-color: #eee;
       border-radius: 0.5em;
+    }
+
+    .media:nth-child(odd) {
+      clear: left;
+    }
+
+    .media-image {
+      float: left;
+      margin-right: 1.5em;
+    }
+
+    .media-body {
+      margin-top: 0;
+      overflow: auto;
+    }
+
+    .media-body h4 {
+      margin-top: 0;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <header>
-      <h1>Franklin Running Club</h1>
-    </header>
+    <header><h1>Franklin Running Club</h1></header>
 
     <main class="main clearfix">
       <h2>Running tips</h2>
 
       <div>
         <div class="media">
-          <img class="media-image" src="runner.png">
+          <img class="media-image" src="runner.png" />
           <div class="media-body">
             <h4>Strength</h4>
             <p>
-              Strength training is an important part of
-              injury prevention. Focus on your core&mdash;
-              especially your abs and glutes.
+              Strength training is an important part of injury prevention. Focus
+              on your core&mdash; especially your abs and glutes.
             </p>
           </div>
         </div>
 
         <div class="media">
-          <img class="media-image" src="shoes.png">
+          <img class="media-image" src="shoes.png" />
           <div class="media-body">
             <h4>Cadence</h4>
             <p>
-              Check your stride turnover. The most efficient
-              runners take about 180 steps per minute.
+              Check your stride turnover. The most efficient runners take about
+              180 steps per minute.
             </p>
           </div>
         </div>
 
         <div class="media">
-          <img class="media-image" src="shoes.png">
+          <img class="media-image" src="shoes.png" />
           <div class="media-body">
             <h4>Change it up</h4>
             <p>
-              Don't run the same every time you hit the
-              road. Vary your pace, and vary the distance
-              of your runs.
+              Don't run the same every time you hit the road. Vary your pace,
+              and vary the distance of your runs.
             </p>
           </div>
         </div>
 
         <div class="media">
-          <img class="media-image" src="runner.png">
+          <img class="media-image" src="runner.png" />
           <div class="media-body">
             <h4>Focus on form</h4>
             <p>
-              Run tall but relaxed. Your feet should hit
-              the ground beneath your hips, not out in
-              front of you.
+              Run tall but relaxed. Your feet should hit the ground beneath your
+              hips, not out in front of you.
             </p>
           </div>
         </div>
-
       </div>
     </main>
   </div>
