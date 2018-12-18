@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
     :root {
@@ -57,12 +57,17 @@
       padding: 1em;
     }
 
+    .sub-abs {
+      top: 2em;
+      z-index: 200;
+    }
   </style>
 </head>
 
 <body>
   <div class="box one positioned">
     one
+    <div class="absolute sub-abs">subnested</div>
     <div class="absolute">nested</div>
   </div>
   <div class="box two positioned">two</div>

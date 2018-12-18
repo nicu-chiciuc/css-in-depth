@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
   <style>
     body {
@@ -8,7 +8,7 @@
     }
 
     button {
-      padding: .5em .7em;
+      padding: 0.5em 0.7em;
       border: 1px solid #8d8d8d;
       background-color: white;
       font-size: 1em;
@@ -62,7 +62,7 @@
     }
     .modal-close::before {
       display: block;
-      content: '\00D7';
+      content: "\00D7";
     }
 
     .sr-only {
@@ -77,7 +77,7 @@
     .container {
       width: 80%;
       max-width: 1000px;
-      margin: 1em auto
+      margin: 1em auto;
     }
 
     .dropdown {
@@ -89,6 +89,20 @@
       padding: 0.5em 1.5em;
       border: 1px solid #ccc;
       background-color: #eee;
+    }
+
+    .dropdown-label::after {
+      content: "";
+      position: absolute;
+      right: 0.7em;
+      top: 1em;
+      border: 0.3em solid;
+      border-color: black transparent transparent;
+    }
+
+    .dropdown:hover .dropdown-label::after {
+      top: 0.7em;
+      border-color: transparent transparent black;
     }
 
     .dropdown-menu {
@@ -125,16 +139,15 @@
     .submenu > li > a:hover {
       background-color: #fff;
     }
-
   </style>
 </head>
 
 <body>
   <header class="top-banner">
     <div class="top-banner-inner">
-      <p>Find out what's going on at Wombat Coffee each
-        month. Sign up for our newsletter:
-        <button id="open">Sign up</button>
+      <p>
+        Find out what's going on at Wombat Coffee each month. Sign up for our
+        newsletter: <button id="open">Sign up</button>
       </p>
     </div>
   </header>
@@ -145,12 +158,11 @@
         <span class="sr-only">close</span>
       </button>
       <h2>Wombat Newsletter</h2>
-      <p>Sign up for our monthly newsletter. No spam.
-         We promise!</p>
+      <p>Sign up for our monthly newsletter. No spam. We promise!</p>
       <form>
         <p>
           <label for="email">Email address:</label>
-          <input type="text" name="email"/>
+          <input type="text" name="email" />
         </p>
         <p><button type="submit">Submit</button></p>
       </form>
@@ -177,18 +189,18 @@
   </div>
 
   <script type="text/javascript">
-  var button = document.getElementById('open');
-var close = document.getElementById('close');
-var modal = document.getElementById('modal');
+    var button = document.getElementById("open");
+    var close = document.getElementById("close");
+    var modal = document.getElementById("modal");
 
-button.addEventListener('click', function(event) {
-  event.preventDefault();
-  modal.style.display = 'block';
-});
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      modal.style.display = "block";
+    });
 
-close.addEventListener('click', function(event) {
-  event.preventDefault();
-  modal.style.display = 'none';
-});
-</script>
+    close.addEventListener("click", function(event) {
+      event.preventDefault();
+      modal.style.display = "none";
+    });
+  </script>
 </body>

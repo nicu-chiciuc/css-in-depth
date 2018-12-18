@@ -30,3 +30,14 @@
 ### page 76
 
 > margins of flexbox items don’t collapse
+
+### page 196
+
+Adding a z-index to a positioned element is the most notable way a stacking context is created, but a few other properties can create one as well.
+An opacity below 1 creates one, as do the transform or filter properties. These fundamentally affect how the element and its children are rendered so they are all painted together. The document root (<html>) also creates a top- level stacking context for the whole page.
+
+> All the elements within a stacking context are stacked in this order, from back to front:
+>  The root element of the stacking context
+>  Positioned elements with a negative z-index (along with their children)  Non-positioned elements
+>  Positioned elements with a z-index of auto (and their children)
+>  Positioned elements with a positive z-index (and their children)
